@@ -1,8 +1,13 @@
 #!/usr/bin/env python3
+'''Task 10's module.
+'''
+from typing import Any, Sequence, Union
 
-safely_get_value = __import__('101-safely_get_value').safely_get_value
-annotations = safely_get_value.__annotations__
 
-print("Here's what the mappings should look like")
-for k, v in annotations.items():
-    print( ("{}: {}".format(k, v)))
+def safe_first_element(lst: Sequence[Any]) -> Union[Any, None]:
+    '''Retrieves the first element of a sequence if it exists.
+    '''
+    if lst:
+        return lst[0]
+    else:
+        return None
